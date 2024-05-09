@@ -1,0 +1,124 @@
+/*
+#####　メモ　#####
+PCルートサイズ:10px タイトル:40px その他:16px
+SPルートサイズ:10px タイトル:40px その他:16px
+要素の上下の間隔は基本的にmargin-bottomで指定
+
+#####　プロパティ順序　#####
+↓要素のサイズ
+↓要素間の距離
+↓Flexbox
+↓要素の位置
+↓要素全体のデザイン
+↓要素の特定のデザイン
+*/
+
+
+/* 全体のスタイルの設定はここ */
+* {
+    box-sizing: border-box;
+}
+
+/* フォントの共通スタイル */
+html {
+    font-family: "yu-gothic-pr6n", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+    /* font-size 10px 相当をルートサイズに指定 */
+    font-size: 62.5%;
+    color: #050B47;
+}
+
+/* 1920px以上の余白を指定 */
+body {
+    background-color: #fff;
+    /* タイトル以外のフォントを16pxに指定 */
+    font-size: 1.6rem;
+}
+
+/* 画像を親要素の最大幅のサイズに */
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* タイトルフォントの共通スタイル */
+.title_font {
+    font-family: agenda, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    /* タイトルのフォントを40pxに指定 */
+    font-size: 4rem;
+    letter-spacing: 0.3em;
+    color: #050B47;
+}
+
+@media only screen and (max-width: 430px) {
+    .title_font {
+        /* タイトルのフォントを40pxに指定 */
+        font-size: 2.8rem;
+    }
+}
+
+/* 各要素のフェードインの初期値 */
+.element {
+    /* 最初は非表示 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+/* 各要素のフェードイン時に付与されるスタイル */
+.is-fadein {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* 個別フォントサイズ一覧 */
+.header_nav {
+    font-size: 1.6rem;
+}
+
+/* タブ切り替え部のフォントサイズ 26px */
+.works_tab_l p,
+.works_tab_r p {
+    font-size: 2.6rem;
+}
+
+/* PC下部のtopボタンのフォントサイズ 12px */
+.top_button_arrow_text {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    /* SPヘッダーのロゴのフォントサイズ 20px */
+    .header_logo {
+        font-size: 2rem;
+        font-weight: 100;
+    }
+
+    /* SPハンバーガーメニューの各リンクのフォントサイズ 18px */
+    .header_ham_modal_links_container a {
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* 全体のフォントサイズ 14px */
+    body {
+        font-size: 1.4rem;
+    }
+
+    /* SPfooterのロゴのフォントサイズ 30px */
+    .footer_logo {
+        font-size: 3rem;
+    }
+
+    /* SPfooterのコピーライトのフォントサイズ 12px */
+    .footer_copyright {
+        font-size: 1.2rem;
+    }
+}
